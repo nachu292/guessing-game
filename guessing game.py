@@ -16,4 +16,7 @@ while True:
         print("you won")
         break
     else:
-        print("Incorrect guess. Please try again!")
+        if int(number) > int(real):
+            print("Too high! Try again.")
+        else:
+            print("Too low! Try again.")
