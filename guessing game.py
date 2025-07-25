@@ -9,9 +9,13 @@ while True:
         os.system('cls')  # Clear the console on Windows
         break  # Exit the loop when a valid number is entered
 
-# Guessing loop
-while True:
+# Guessing loop (max 3 attempts)
+attempts = 0
+max_attempts = 3
+while attempts < max_attempts:
     number = input("guess the number: ")
+    attempts += 1
+    os.system('cls')
     if number == real:
         print("you won")
         break
@@ -20,3 +24,6 @@ while True:
             print("Too high! Try again.")
         else:
             print("Too low! Try again.")
+        if attempts == max_attempts:
+            print(
+                f"Sorry, you've used all attempts. The correct number was {real}.")
